@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+       <section class="logo"> <img src="logo.png" > </section>
+
+    <div class="slider">
+       
+        <div class="dir" id="btn-back"><i class="large material-icons">first_page</i></div>
+        <img src="img2.jpg" id="imagen" class="img" >
+        <div class="dir" id="btn-next"><i class="large material-icons">last_page</i></div>
+       
+    </div>
+
+    <script>
+        
+        var btnNex=document.getElementById("btn-next"),
+            btnBack=document.getElementById("btn-back"),
+            img=document.getElementById("imagen"),
+            cont=0,
+            arrayImg=['img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg']
+        
+        var next=function(){
+            if(cont>=4){
+                cont=0;
+                img.src=(arrayImg[cont]);
+            }else{
+            cont++;
+            img.src=(arrayImg[cont]);
+            console.log(arrayImg[cont]);
+            console.log(cont);
+            }
+        }
+        btnNex.addEventListener("click",next);
+        //btnBack.addEventListener("click",back);
+
+    </script>
+</body>
+</html>
